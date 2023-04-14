@@ -1,0 +1,34 @@
+CharacterInfo {
+    layout: horizontal;
+    background: $boost;
+    height: 8;
+    margin: 1;
+    /*min-width: 50;*/
+    padding: 1;
+}
+
+ClassesWidget {
+    height: 100%;
+    width: 24%;
+    border: solid green;
+    padding: 1;
+}
+
+InfoWidget {
+    height: 100%;
+    width: 10%;
+    border: solid green;
+    padding: 1;
+}
+
+#character-name {
+    height: 100%;
+    width: 30%;
+    align: center middle;
+    border: solid red;
+    padding: 1;
+}
+
+#character-info {
+    align: center middle;
+}

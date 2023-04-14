@@ -1,0 +1,68 @@
+name: !!str
+  Testing Testers-ton
+
+classes:
+  - [Warlock, 8]
+  - [Fighter, 2]
+
+background: !!str
+  Soldier
+
+race: !!str
+  Human
+
+alignment: !!str
+  TN
+
+stats:
+  STR: 10
+  DEX: 11
+  CON: 12
+  INT: 13
+  WIS: 14
+  CHA: 15
+
+max-hp:
+  69
+
+ac:
+  13
+
+proficiencies:
+  saving-throws:
+    - CHA
+    - WIS
+  skills:
+    - History
+    - Religion
+  languages:
+    - Common
+    - Your Mom
+
+spell-slots:
+  4: 2
+
+spells:
+  cantrips:
+    - Eldritch Blast
+    - Spare the Dying
+  1:
+    - Shield
+    - Big Shield
+  3:
+    - Fireball
+  4:
+    - Extra Fireball
+    - Wall of Fire
+
+spell-save-dc: 16
+
+spell-attack-modifier: 8
+
+equipment:
+  - Illusionist's Bracers
+  - Rod of the Pact Keeper
+  - Spell Focus
+  - Armor
+
+
