@@ -1,12 +1,11 @@
 name: !!str
-  Testing Testers-ton
+  Dr. Francis Bartlett
 
 classes:
-  - [Warlock, 8]
-  - [Fighter, 2]
+  - [Celestial Warlock, 8]
 
 background: !!str
-  Soldier
+  Acolyte
 
 race: !!str
   Human
@@ -15,12 +14,12 @@ alignment: !!str
   TN
 
 stats:
-  STR: 9
-  DEX: 11
-  CON: 12
-  INT: 13
-  WIS: 14
-  CHA: 15
+  STR: 10
+  DEX: 10
+  CON: 18
+  INT: 17
+  WIS: 18
+  CHA: 20
 
 max-hp: 69
 ac: 13
@@ -30,12 +29,15 @@ proficiencies:
   saving-throws:
     - CHA
     - WIS
+    - CON
   skills:
-    - History
+    - Insight
     - Religion
   languages:
     - Common
-    - Your Mom
+    - Celestial
+    - Halfling
+    - Abyssal
 
 spell-slots:
   4: 2
@@ -43,14 +45,25 @@ spell-slots:
 spells:
   cantrips:
     - Eldritch Blast
+    - Minor Illusion
+    - Prestidigitation
+    - Light
+    - Sacred Flame
+    - Thaumaturgy
+    - Message
     - Spare the Dying
   1:
-    - Shield
-    - Big Shield
+    - Cure Wounds
+    - Guiding Bolt
+  2:
+    - Flaming Sphere
+    - Lesser Restoration
   3:
-    - Fireball
+    - Daylight
+    - Revivify
+    - Copy Spell
   4:
-    - Extra Fireball
+    - Guardian of Faith
     - Wall of Fire
 
 spell-save-dc: 16
@@ -58,9 +71,28 @@ spell-save-dc: 16
 spell-attack-modifier: 8
 
 equipment:
+  - Light Crossbow
+  - Leather Armor
+  - Hand Axe
+  - 2 Daggers
   - Illusionist's Bracers
-  - Rod of the Pact Keeper
-  - Spell Focus
-  - Armor
+  - Rod of the Pact Keeper (+1)
 
+attributes:
+  - Pact of the Tome
+  - Invocations:
+      - Agonizing blast
+      - Repelling blast
+      - Eldritch Spear
+      - Sculptor of flesh
+      - Gift of the Protectors
+  - Seraph:
+      - Angelic Wings (Fly)
+      - Planar Binding (Dis. on Death Saves)
+      - Divine Clemency (Heal spell as reaction)
+      - Divine Appearance
+  - Feats:
+      - Resilient (CON)
+      - ASI (+2 CHA)
+      - Eldritch Adept
 
