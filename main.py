@@ -19,6 +19,7 @@ TERMINAL_ARGUMENTS = parser.parse_args()
 CHARACTER_SHEET_FILEPATH = TERMINAL_ARGUMENTS.filename
 VERSION = 'PRE-ALPHA AS FUCK'
 
+
 class CharacterInfo(Static):
     """Widget to display basic character information"""
 
@@ -62,12 +63,36 @@ class InfoWidget(Container):
         yield Static(self.field)
         yield Static(self.info)
 
+
 class CharacterBody(Static):
     """Widget to display character info necessary to gameplay."""
 
     def __init__(self, character: dict):
         super().__init__()
         self.character = character
+
+    def compose(self) -> ComposeResult:
+        """Creates a grid of child widgets."""
+        with Container(id='charachter-body'):
+            yield StatsWidget(self.character['stats'])
+
+
+class StatsWidget(Container):
+    """Displays certain pieces of character information"""
+
+    def __init__(self, stats: dict):
+        super().__init__()
+        self.stats = stats
+
+    def compose(self) -> ComposeResult:
+        """Create child widgets containing field and info"""
+        yield Static(f"STR: {self.stats['STR']:2d} ({stat_modifier(self.stats['STR']):+d})")
+        yield Static(f"DEX: {self.stats['DEX']:2d} ({stat_modifier(self.stats['DEX']):+d})")
+        yield Static(f"CON: {self.stats['CON']:2d} ({stat_modifier(self.stats['CON']):+d})")
+        yield Static(f"INT: {self.stats['INT']:2d} ({stat_modifier(self.stats['INT']):+d})")
+        yield Static(f"WIS: {self.stats['WIS']:2d} ({stat_modifier(self.stats['WIS']):+d})")
+        yield Static(f"CHA: {self.stats['CHA']:2d} ({stat_modifier(self.stats['CHA']):+d})")
+
 
 class CharacterSheet5E(App):
     """A Textual app to render character sheets."""
@@ -84,6 +109,7 @@ class CharacterSheet5E(App):
         """Called to add widgets to the app."""
         yield Header(show_clock=True, name=f'5e Character Sheet - {VERSION}')
         yield CharacterInfo(self.character)
+        yield CharacterBody(self.character)
         yield Footer()
 
     def load_character_sheet(self, filename: str):
@@ -94,6 +120,10 @@ class CharacterSheet5E(App):
 
         with open(filename, "r") as f:
             self.character = yaml.safe_load(f)
+
+
+def stat_modifier(stat: int):
+    return (stat - 10) // 2
 
 
 if __name__ == "__main__":

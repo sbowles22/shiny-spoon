@@ -15,18 +15,16 @@ alignment: !!str
   TN
 
 stats:
-  STR: 10
+  STR: 9
   DEX: 11
   CON: 12
   INT: 13
   WIS: 14
   CHA: 15
 
-max-hp:
-  69
-
-ac:
-  13
+max-hp: 69
+ac: 13
+proficiency-bonus: 3
 
 proficiencies:
   saving-throws:
