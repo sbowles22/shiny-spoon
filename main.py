@@ -73,8 +73,18 @@ class CharacterBody(Static):
 
     def compose(self) -> ComposeResult:
         """Creates a grid of child widgets."""
-        with Container(id='charachter-body'):
+        with Container(id='character-body'):
             yield StatsWidget(self.character['stats'])
+            yield Label(f"HP: {self.character['max-hp']}")
+            yield Label(f"AX: {self.character['ac']}")
+            yield Label(f"PB: {self.character['proficiency-bonus']}")
+            yield Label(f"Slots: {self.character[f'spell-slots']}")
+            yield Label(f"DC: {self.character['spell-save-dc']}")
+            yield Label(f"Mod: {self.character['spell-attack-modifier']}")
+            yield TempWidget('Prof:', self.character[f'proficiencies'])
+            yield TempWidget('Spells:', self.character[f'spells'])
+            yield TempWidget('Equip:', self.character[f'equipment'])
+            yield TempWidget('Attri:', self.character[f'attributes'])
 
 
 class StatsWidget(Container):
@@ -92,6 +102,20 @@ class StatsWidget(Container):
         yield Static(f"INT: {self.stats['INT']:2d} ({stat_modifier(self.stats['INT']):+d})")
         yield Static(f"WIS: {self.stats['WIS']:2d} ({stat_modifier(self.stats['WIS']):+d})")
         yield Static(f"CHA: {self.stats['CHA']:2d} ({stat_modifier(self.stats['CHA']):+d})")
+
+
+class TempWidget(Container):
+    """Displays certain pieces of character information"""
+
+    def __init__(self, field: str, info: any):
+        super().__init__()
+        self.field = field
+        self.info = repr(info)
+
+    def compose(self) -> ComposeResult:
+        """Create child widgets containing field and info"""
+        yield Static(self.field)
+        yield Static(self.info)
 
 
 class CharacterSheet5E(App):

@@ -21,8 +21,8 @@ stats:
   WIS: 18
   CHA: 20
 
-max-hp: 69
-ac: 13
+max-hp: 72
+ac: 12
 proficiency-bonus: 3
 
 proficiencies:
@@ -33,6 +33,8 @@ proficiencies:
   skills:
     - Insight
     - Religion
+    - Arcana
+    - History
   languages:
     - Common
     - Celestial
@@ -56,23 +58,23 @@ spells:
     - Cure Wounds
     - Guiding Bolt
   2:
-    - Flaming Sphere
     - Lesser Restoration
   3:
     - Daylight
     - Revivify
     - Copy Spell
+    - Remove Curse
   4:
     - Guardian of Faith
     - Wall of Fire
 
-spell-save-dc: 16
+spell-save-dc: 17
 
-spell-attack-modifier: 8
+spell-attack-modifier: 9
 
 equipment:
   - Light Crossbow
-  - Leather Armor
+  - Studded Leather Armor
   - Hand Axe
   - 2 Daggers
   - Illusionist's Bracers

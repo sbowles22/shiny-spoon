@@ -32,3 +32,23 @@ InfoWidget {
 #character-info {
     align: center middle;
 }
+
+TempWidget {
+    height: 9;
+    width: 100%;
+    border: solid blueviolet;
+    padding: 1;
+}
+
+StatsWidget {
+    height: 10;
+    width: 20%;
+    border: solid fuchsia;
+    padding: 1;
+}
+
+#character-body {
+    background: $boost;
+    margin: 1;
+    padding: 1;
+}
